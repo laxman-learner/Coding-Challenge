@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Challenge in JS</title>
+    <script>
+      // js code that displays the even numbers from 1 to 20
+      let num = prompt("Enter any number : ");
+      if (isNaN(num)) document.write("Error! Enter any number to proceed ");
+      else {
+        let choice = prompt("Do you want even or odd numbers upto " + num);
+        if (choice == "even") {
+          document.write(`Even numbers upto ${num} are : <br>`);
+          for (var i = 1; i < num; i++) {
+            if (i % 2 == 0) document.write(i + "<br>");
+          }
+        } else if (choice == "odd") {
+          document.write(`Odd numbers upto ${num} are : <br>`);
+          for (var i = 1; i < num; i++) {
+            if (i % 2 == 1) document.write(i + "<br>");
+          }
+        } else {
+          document.write(
+            "Invalid! Please enter either even or odd what you wish"
+          );
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
