@@ -3,32 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script>
-      const currentDate = new Date();
-      const daysOfWeek = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ];
-      const currentDay = daysOfWeek[currentDate.getDay()];
-      let currentHour = currentDate.getHours();
-      const amOrPm = currentHour >= 12 ? "pm" : "am";
-
-      if (currentHour > 12) currentHour -= 12;
-
-      const currentMinute = currentDate.getMinutes();
-      const currentSecond = currentDate.getSeconds();
-
-      document.write(`Today is: ${currentDay}. <br>`);
-      document.write(
-        `Current time is: ${currentHour} ${amOrPm} : ${currentMinute} : ${currentSecond}.`
-      );
-    </script>
+    <title>Print Window Contents</title>
   </head>
-  <body></body>
+  <body>
+    <button onclick="printWindowContents()">Print this page</button>
+
+    <script>
+      // Print the contents of the current window
+      function printWindowContents() {
+        window.print();
+      }
+    </script>
+  </body>
 </html>
