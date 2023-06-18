@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check for leap year</title>
+    <script>
+      // program to determine whether a given year is a leap year in the Gregorian calendar.
+
+      function isLeapYear(year) {
+        if (year % 4 !== 0) return false;
+        // if the year is not divisible by 4, it's not a leap year
+        else if (year % 100 !== 0) return true;
+        // if the year is divisible by 4 and not divisible by 100, then it is leap year
+        else if (year % 400 !== 0) return false;
+        // if the year is divisible by 100 but not by 400, then it is not a leap year.
+        else return true;
+      }
+      const year = Number(prompt("Enter a valid year"));
+      if (isLeapYear(year)) document.write(year + " is a leap year");
+      else document.write(year + " is not a leap year");
+    </script>
+  </head>
+  <body></body>
+</html>
