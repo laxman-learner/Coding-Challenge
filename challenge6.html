@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays in JavaScript</title>
+    <script>
+      /*
+        JavaScript code to create a tip calculator for a
+        restaurant. The rules for tip are that if the bill amount is
+        less than 250 , tip is 20%, if the bill is between 250 and
+        500 then tip is 15% and when the bill is above 500 then
+        tip is 10%. Your code should accept four bill amounts
+        from the user , calculate their tips and print the original
+        bill as well as final bill for each amoun
+        */
+
+      let choice = Number(prompt("For how many customer you need bill"));
+      let bill = [];
+      for (let i = 0; i < choice; i++) {
+        bill[i] = Number(prompt("Enter bill amount"));
+      }
+
+      let final = [null];
+
+      for (let i = 0; i < choice; i++) {
+        if (bill[i] < 250) final[i] = bill[i] + (bill[i] * 20) / 100;
+        else if (bill[i] > 250 && bill[i] < 500)
+          final[i] = bill[i] + (bill[i] * 15) / 100;
+        else final[i] = bill[i] + (bill[i] * 10) / 100;
+      }
+
+      // printing the total bill amount
+      document.write("Your Bill Details");
+      document.write("<hr>");
+      document.write("<table border = 2");
+      document.write(
+        "<tr> <td> <b>Bill Amount </b> </td> <td> <b> Final Amount </b> </td> </tr>"
+      );
+      for (let i = 0; i < choice; i++) {
+        document.write(
+          `<tr> <td> ${bill[i]} </td> <td> ${final[i]} </td> </tr>`
+        );
+      }
+      document.write("</table");
+    </script>
+  </head>
+  <body></body>
+</html>
