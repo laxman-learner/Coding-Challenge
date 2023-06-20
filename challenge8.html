@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Array Demo</title>
+    <script>
+      /* JavaScript code to accept 5 names from the user and store them in an array. Now ask
+      the user to input another name and print all the occurrences of this name in the given
+      array using the array method indexOf(). In case the given name is not found at all, print
+      the message name not found */
+      let names = [];
+      let i;
+      for (i = 0; i < 5; i++) {
+        names[i] = prompt("Enter name");
+      }
+      let str = prompt("Enter name to search:");
+
+      document.write("Names are:<br>");
+      for (let x of names) document.write(`${x}<br>`);
+
+      let index = 0,
+        pos;
+      while (true) {
+        pos = names.indexOf(str, index);
+        if (pos == -1) break;
+
+        document.write(`${str} is at pos ${pos}<br>`);
+        index = pos + 1;
+      }
+    </script>
+  </head>
+
+  <body></body>
+</html>
