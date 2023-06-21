@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge with function</title>
+    <script>
+      /*JavaScript function called “average( )” which should accept some integers as argument
+      and calculates and displays their sum and average */
+      function average() {
+        document.write(
+          `Function called with following ${arguments.length} arguments <br>`
+        );
+        for (nums of arguments) {
+          document.write(`${nums} <br>`);
+        }
+        let sum = 0,
+          avg = 0;
+        for (num of arguments) {
+          sum = sum + Number(num);
+        }
+        avg = sum / arguments.length;
+        document.write(`Sum is ${sum.toFixed(2)} <br>`);
+        document.write(`Average is ${avg.toFixed(2)} <br>`);
+        // if function is called without arguments then sum will be zero and average will be NaN
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      average(10, 20, 30, 40, 50);
+      average(15, 34, 93, 30, 44, 81, 93);
+      average();
+    </script>
+  </body>
+</html>
