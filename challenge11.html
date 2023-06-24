@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fibonacci Series</title>
+    <script>
+      let a = 0;
+      let b = 1;
+      document.write(a + " " + b + " ");
+      let n = Number(prompt("How many terms you need ?"));
+      for (i = 2; i < n; i++) {
+        let s = a + b;
+        document.write(s + " ");
+        a = b;
+        b = s;
+      }
+    </script>
+  </head>
+</html>
