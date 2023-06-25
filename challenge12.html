@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+    <script>
+      let x = 1;
+      function printNos() {
+        document.write(`${x} <br>`);
+        x++;
+        if (x == 11) {
+          clearInterval(y);
+          document.write("Done !!!");
+        }
+      }
+      y = setInterval(printNos, 1000);
+      document.write("Hi");
+    </script>
+  </head>
+  <body></body>
+</html>
