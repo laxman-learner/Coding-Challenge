@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom object problem</title>
+    <script>
+      /*
+       Program to  create an object called company with the following properties and methods:
+        1. name: should be set to “Apple”
+        2. foundationYear: should be set to 1976
+        3. productsList: should contain 2 products with first product name set to “iPhone”,it’s
+           year set to 2007 and second product’s name set to “iPad” and it’s year set to 2010
+        4. foundedBy: should be set to “Steve Jobs”,”Steve Wozniak”
+        5. ceo: should be set to “Steve Jobs”
+        6. A method called createNewProduct(): which should accept product details and add it
+            to the productList
+        7. A method called resign(): which should remove ceo ,make the ceo post vaccant and
+            return the name of the ceo.
+        8. A method called hireCeo(): which should accept a string “Tim Cook” and set it as the
+            ceo.
+        9. A method called toString(): which returns the name , foundationYear,ceo,productsList
+            as a single string separated with newline
+
+        */
+
+      let company = {
+        name: "Apple",
+        foundationYear: 1976,
+        productsList: [
+          { name: "IPhone", year: 2007 },
+          { name: "IPad", year: 2010 },
+        ],
+        foundedBy: ["Steve Jobs", "Steve Wozniak"],
+        ceo: "Steve Jobs",
+        createNewProduct: function (p) {
+          company.productsList.push(p);
+        },
+        resign: function () {
+          let str = company.ceo;
+          company.ceo = null;
+          return str;
+        },
+
+        hireCeo: function (name) {
+          company.ceo = name;
+        },
+
+        toString: function () {
+          let str = "";
+          let pdetails = "";
+          for (let p of company.productsList) {
+            pdetails += `${p.name} - ${p.year} `;
+          }
+          str = `<strong>Name : </strong> ${company.name} <br>
+                        <strong> Foundation Year : </strong> ${company.foundationYear} <br>
+                        <strong> Founded By : </strong> ${company.foundedBy} <br>
+                        <strong> CEO : </strong> ${company.ceo} <br>
+                        <strong> Product List  : </strong> ${pdetails} <br>`;
+          return str;
+        },
+      };
+      document.write("<h3> Company Details </h3>");
+      document.write(company);
+    </script>
+  </head>
+  <body></body>
+</html>
