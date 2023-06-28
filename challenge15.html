@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Character count</title>
+    <script>
+      function countCharacters() {
+        // Convert the string to lowercase for comparison
+        let str = prompt("Type any message :");
+        var lowercaseStr = str.toLowerCase();
+
+        // Initialize counters
+        var vowelCount = 0;
+        var consonantCount = 0;
+        var symbolCount = 0;
+        var digitCount = 0;
+
+        // Iterate through each character in the string
+        for (var i = 0; i < lowercaseStr.length; i++) {
+          var currentChar = lowercaseStr[i];
+
+          // Check if the character is a vowel
+          if (currentChar.match(/[aeiou]/)) {
+            vowelCount++;
+          }
+
+          // Check if the character is a consonant
+          else if (currentChar.match(/[b-df-hj-np-tv-z]/)) {
+            consonantCount++;
+          }
+
+          // Check if the character is a digit
+          else if (currentChar.match(/[0-9]/)) {
+            digitCount++;
+          }
+
+          // If the character is none of the above, it is a symbol
+          else {
+            symbolCount++;
+          }
+        }
+
+        document.write(`The string "${str}"  contains ${vowelCount} Vowels, ${consonantCount}
+        Consonants, ${digitCount} Digits, and ${symbolCount} Special Symbols`);
+      }
+
+      // Example usage
+      countCharacters();
+    </script>
+  </head>
+</html>
